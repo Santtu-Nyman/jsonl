@@ -1,5 +1,5 @@
 /*
-	JSON library version 3.0.0 2020-11-07 by Santtu Nyman.
+	JSON library version 3.0.01 2020-12-06 by Santtu Nyman.
 	git repository https://github.com/Santtu-Nyman/jsonl
 
 	Description
@@ -23,6 +23,9 @@
 		with it's expanded purpose.
 
 	Version history
+		version 3.0.01 2020-12-06
+			Fixed typos in the documentation.
+			Fixed type conversion bug on 64 bit assertion.
 		version 3.0.0 2020-11-08
 			Added new functionality for modifying JSON data.
 			Changed jsonpl_get_value function to searching from paths.
@@ -153,22 +156,22 @@ typedef struct jsonl_value_t
 			This member specifies the type of this value.
 			This member can be one of the following constants.
 
-				JSON_TYPE_OBJECT
+				JSONL_TYPE_OBJECT
 					The specified value is an object.
 
-				JSON_TYPE_ARRAY
+				JSONL_TYPE_ARRAY
 					The specified value is an array.
 
-				JSON_TYPE_STRING
+				JSONL_TYPE_STRING
 					The specified value is a string.
 
-				JSON_TYPE_NUMBER
+				JSONL_TYPE_NUMBER
 					The specified value is a number.
 
-				JSON_TYPE_BOOLEAN
+				JSONL_TYPE_BOOLEAN
 					The specified value is a boolean.
 
-			The constant JSON_TYPE_ERROR is not used. It is for internal uses of this library only.
+			The constant JSONL_TYPE_ERROR is not used. It is for internal uses of this library only.
 
 		array.value_count
 			Value of this member is only valid if type of this value is an array.
@@ -324,27 +327,27 @@ typedef struct jsonl_path_component_t
 			This variable specifies the type of this path component.
 			This member can be one of the following constants. Other types are not allowed.
 
-				JSON_TYPE_OBJECT
+				JSONL_TYPE_OBJECT
 					The specified path is in an object.
 
-				JSON_TYPE_ARRAY
+				JSONL_TYPE_ARRAY
 					The specified path is in an array.
 
 		index
 			Value of this member is only valid if type of this path component is array.
-			This is true when, value of container_type member is JSON_TYPE_ARRAY.
+			This is true when, value of container_type member is JSONL_TYPE_ARRAY.
 			This variable specifies the array index of this path component.
 			If this member is set to (size_t)~0, this component will be appended to the end off the array.
 			If this member is (size_t)~0 when removing a value, nothing will be removed.
 
 		name.length
 			Value of this member is only valid if type of this path component is object.
-			This is true when, value of container_type member is JSON_TYPE_OBJECT.
+			This is true when, value of container_type member is JSONL_TYPE_OBJECT.
 			This member specifies the size of this path component name in bytes not including null terminating character.
 
 		name.value
 			Value of this member is only valid if type of this path component is object.
-			This is true when, value of container_type member is JSON_TYPE_OBJECT.
+			This is true when, value of container_type member is JSONL_TYPE_OBJECT.
 			This member is a pointer to beginning of the path component name.
 			The length of this string is specified by name.length member.
 			The format of the string is null terminated UTF-8.

@@ -1,5 +1,5 @@
 /*
-	JSON library version 3.0.0 2020-11-07 by Santtu Nyman.
+	JSON library version 3.0.01 2020-12-06 by Santtu Nyman.
 	git repository https://github.com/Santtu-Nyman/jsonl
 	
 	License
@@ -45,7 +45,7 @@ static void jsonl_debug_assert(int x, int location)
 	if (!x)
 		*(volatile int*)0 = location;
 }
-#define JSONL_ASSERT(x) jsonl_debug_assert((int)(x), (int)(__LINE__))
+#define JSONL_ASSERT(x) jsonl_debug_assert((int)((x) != 0), (int)(__LINE__))
 #endif
 #endif
 #if defined(__GNUC__)
