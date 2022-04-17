@@ -1,5 +1,5 @@
 /*
-	JSON library version 3.0.01 2020-12-06 by Santtu Nyman.
+	JSON library version 3.0.01 2020-12-06 by Santtu S. Nyman.
 	git repository https://github.com/Santtu-Nyman/jsonl
 	
 	License
