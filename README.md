@@ -1,4 +1,4 @@
-JSON library by Santtu Nyman.
+JSON library by Santtu S. Nyman.
 
 Cross-Platform C library without dependencies for parsing and modifying JSON text.
 This library does not use any OS services or runtime libraries.
